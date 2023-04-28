@@ -1,0 +1,141 @@
+:root{
+    --colorPri:aqua;
+}
+
+/* GENERICO */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    text-decoration: none;
+
+}
+html{
+    font-size: 62.5%;  /*1 rem = 10 px*/
+    box-sizing: border-box; /*para lidiar con el boxmodel*/
+}
+/* BOX MODEL  */
+*,*:before,*:after{
+    box-sizing: inherit; /*PARA EL BOX MODEL*/
+}
+
+body{
+    height: 300rem;
+}
+/* GLOBALES */
+
+.container{
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.bg-header{
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(../img/bg.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Header */
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+.navbar .links{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .links li{
+    font-size: 1.7rem;
+    margin: 0.5rem 1rem;
+    padding: 0 .4rem;
+    position: relative;
+}
+.navbar .links li::after{
+    content: "";
+    height: .3rem;
+    width: 0;
+    background: #009688;
+    position: absolute;
+    left: 0;
+    bottom: -.7rem;
+    transition: .5s;
+}
+.navbar .links li:hover::after{
+    width: 100%;
+}
+.navbar .links li a{
+    color: beige;
+    text-transform: uppercase;
+}
+.header .logo{
+    cursor: pointer;
+}
+
+/* Hero */
+.hero {
+
+    height: 100%;
+    width: 90%;
+}
+.content{
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: 32rem;
+}
+.content h1{
+    margin: 0;
+    font-size: 6rem;
+    padding: 1rem 0;
+}
+.content p{
+    font-size:1.6rem;
+}
+.content .btn{
+    color: white;
+    border: var(--colorPri) solid .2rem;
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+    margin: 2rem 1rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+.container-btn span{
+    background: #009688;
+    width: 100%;
+    height: 0;
+    border-radius: 2rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: .3s;
+}
+.container-btn .btn:hover span{
+    height: 100%;
+}
+
+@media (max-width: 768px ){
+    .navbar .links{
+        display: none;
+    }
+    .header .fa-bars{
+        color: antiquewhite;
+    }
+}
